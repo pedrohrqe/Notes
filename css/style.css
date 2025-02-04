@@ -1,0 +1,274 @@
+:root {
+    --text: #1d0d02;
+    --background: #fef9f4;
+    --border: #00000018;
+    --primary: #ee8218;
+    --secondary: #d4f575;
+    --accent: #0e47b1;
+    --white: #fdfdfd;
+    --fixed: #3190df3d;
+}
+
+.hide {
+    display: none !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    transition: 300ms;
+}
+
+.hidden {
+    opacity: 0 !important;
+    transition: 300ms;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", serif;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    user-select: none;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+button i {
+    user-select: none;
+    font-size: 1rem;
+}
+
+header h1 {
+    font-weight: 500;
+    letter-spacing: -.1rem;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    min-width: 35%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+#search input {
+    outline: none;
+    width: 100%;
+    border: none;
+}
+
+#search:focus-within {
+    outline: 1px solid var(--accent);
+}
+
+#search i {
+    pointer-events: none;
+    position: absolute;
+    right: 8px;
+}
+
+#export-data {
+    padding: 10px;
+    background: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+#export-data:hover {
+    background-color: var(--accent);
+    color: var(--white);
+    transition: 300ms;
+}
+
+#add-note {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    width: 400px;
+    height: 85px;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+#add-note:focus-within {
+    outline: 1px solid var(--accent);
+}
+
+#add-note textarea {
+    resize: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+}
+
+#notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 95%;
+}
+
+.note {
+    position: relative;
+    opacity: 1;
+    min-width: 257px;
+    min-height: 260px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 300ms;
+}
+
+.note:focus-within {
+    outline: 1px solid var(--accent);
+}
+
+.note textarea {
+    outline: none;
+    resize: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    padding-right: 52px;
+    background: none;
+    border: none;
+}
+
+.note button,
+#add-note button {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+}
+
+.note button:hover,
+#add-note button:hover {
+    background-color: var(--border);
+}
+
+.note button i,
+#add-note button i {
+    opacity: 0.2;
+}
+
+.note button i:hover,
+#add-note button i:hover {
+    opacity: 1;
+}
+
+.note button:hover i,
+#add-note button:hover i {
+    opacity: 1;
+    font-size: 1.05rem;
+    color: var(--accent);
+}
+
+.note .trash-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.note .copy-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.note .pin-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.note.fixed {
+    background-color: var(--fixed);
+    transition: 300ms;
+}
+
+@media (max-width: 555px) {
+
+    header {
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 90%;
+        min-height: 100px;
+    }
+
+    #search {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #add-note {
+        width: 90%;
+    }
+
+    #add-note textarea {
+        font-size: .8rem;
+    }
+
+    .note button,
+    #add-note button {
+        min-width: 30px;
+        min-height: 30px;
+    }
+
+    button i {
+        font-size: .8rem;
+    }
+
+    .note {
+        min-width: 180px;
+        min-height: 160px;
+    }
+
+    .note textarea {
+        font-size: .8rem;
+    }
+}
