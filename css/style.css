@@ -7,6 +7,11 @@
     --accent: #0e47b1;
     --white: #fdfdfd;
     --fixed: #3190df3d;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hide {
